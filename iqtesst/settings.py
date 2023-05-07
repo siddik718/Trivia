@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gs8#wb=!u$l%d^itpl@3mr@ann$as%c$0jcviz+2na*x0x-b7n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'api', #new
+    'api.apps.ApiConfig', #new
     'rest_framework', #new
     'corsheaders', #new
     'whitenoise.runserver_nostatic', # new
