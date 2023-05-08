@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+const apiUrl = process.env.REACT_APP_API_URL;
 
 function Test() {
   const [questions, setQuestions] = useState([]);
@@ -11,7 +11,7 @@ function Test() {
   const [selectedOption, setSelectedOption] = useState(""); // declare selectedOption state
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/quiz-questions/')
+    axios.get(`${apiUrl}/quiz-questions/`)
       .then(response => {
         setQuestions(response.data.sort(()=>Math.random()-0.5));
       })

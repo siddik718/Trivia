@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 
 import { useNavigate } from 'react-router';
+const apiUrl = process.env.REACT_APP_API_URL;
 
 function UploadForm() {
   const [file, setFile] = useState(null);
@@ -15,7 +16,7 @@ function UploadForm() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:8000/api/upload_file/', {
+      const response = await fetch(`${apiUrl}/upload_file/`, {
         method: 'POST',
         body: formData,
       });
